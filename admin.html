@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — BTVTE ENROLMENT PAGE</title>
+<meta name="description" content="View enrollments stored on this device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">\n      <svg class="logo-mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 1 1 -9.2 22.2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>\n      BTVTE <span>Enrolment</span>\n    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="design-notes.html">Design Notes</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h1>Enrollments on this device</h1>
+        <p class="lede">This is a local view only: it reads enrollments saved in this browser's storage, on this device. <span id="admin-count"></span></p>
+      </div>
+
+      <p>
+        <button id="clear-all" class="btn btn-ghost">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>
+          Clear all
+        </button>
+      </p>
+
+      <table id="admin-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Program</th>
+            <th>Schedule</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody id="admin-body"></tbody>
+      </table>
+
+      <div id="admin-empty" class="empty-state" style="display:none;">
+        <p>No enrollments saved on this device yet.</p>
+        <a class="btn btn-primary" href="enroll.html">Go to enrollment form</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> BTVTE Enrolment</span>
+    <span><a href="contact.html">Get in touch</a></span>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

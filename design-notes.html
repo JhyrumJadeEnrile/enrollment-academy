@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Notes — Northfield Studio</title>
+<meta name="description" content="How this enrollment site applies Gestalt principles, visual hierarchy, and mental models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="logo-mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 1 1 -9.2 22.2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      North<span>field</span> Studio
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="design-notes.html">Design Notes</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h1>Design notes: perception &amp; mental models</h1>
+        <p class="lede">This page documents, on purpose, where and why each principle was applied across the site — written for the HCI assignment, but honestly just good practice for any interface.</p>
+      </div>
+
+      <h2>Gestalt principles</h2>
+      <div class="course-list mt-lg">
+        <div class="course-row" style="grid-template-columns: 1fr 2fr;">
+          <h3>Proximity</h3>
+          <p>On the <a href="enroll.html">enrollment form</a>, personal-detail fields (name, email, phone, date of birth) sit inside one bordered group, and course/schedule fields sit inside a separate group. The border and shared background tell the eye these six fields are really two related sets, not six unrelated ones — without a single word of instruction.</p>
+        </div>
+        <div class="course-row" style="grid-template-columns: 1fr 2fr;">
+          <h3>Similarity</h3>
+          <p>Every button on the site shares one of three consistent styles (<code>.btn-primary</code>, <code>.btn-ghost</code>, <code>.btn-cta</code>), and every icon shares the same stroke weight and line style. Once a person learns what one button or icon does, they can predict what a similar-looking one does elsewhere.</p>
+        </div>
+        <div class="course-row" style="grid-template-columns: 1fr 2fr;">
+          <h3>Continuity</h3>
+          <p>The navigation bar reads left to right in one continuous line — logo, then pages, in a fixed order on every page — instead of being split across separate rows or corners. The eye follows it as a single path rather than re-scanning the page to find it.</p>
+        </div>
+        <div class="course-row" style="grid-template-columns: 1fr 2fr;">
+          <h3>Closure</h3>
+          <p>The logo mark next to "Northfield" is a single arc with a deliberate gap — the stroke never actually closes into a circle, but the eye completes it anyway. It's the same effect the brief describes as "a logo formed by an incomplete circle still perceived as whole."</p>
+        </div>
+        <div class="course-row" style="grid-template-columns: 1fr 2fr;">
+          <h3>Figure-ground</h3>
+          <p>The "Applications close soon" banner on the <a href="index.html">home page</a> switches to a solid dark background with light, bold text — a deliberate break from the paper-colored page around it, so that one message reads as clearly in front of its background, not blended into it.</p>
+        </div>
+      </div>
+
+      <h2 class="mt-lg">Visual hierarchy</h2>
+      <p>Each page has at most one gold <span class="tag" style="border-color:var(--gold); color:var(--gold-deep);">•</span> <strong>CTA button</strong> (<em>Reserve your seat</em>, <em>Start enrollment</em>, <em>Submit enrollment</em>) — the single action that page most wants a visitor to take. Every other button uses a quieter ink or outline style, so the gold button is never competing with a same-weight neighbor. Color and contrast are doing the ranking, not size alone.</p>
+
+      <h2 class="mt-lg">Mental model alignment</h2>
+      <p>Icons are only used where they match an existing real-world idea: a <strong>folder</strong> for the course catalog, a <strong>calendar</strong> for scheduling, a <strong>trash can</strong> for the destructive "clear all" action on the admin page, and a <strong>check mark</strong> for a completed enrollment. Buttons behave the way their label promises — "Submit enrollment" submits and moves forward, "Clear all" asks for confirmation before deleting anything, and every link goes exactly where its text says it will. Nothing here tries to be clever at the expense of being predictable.</p>
+
+      <h2 class="mt-lg">Reflection</h2>
+      <div class="summary-card">
+        <p style="max-width:70ch;">This design uses proximity to group the enrollment form's personal and course fields so the form reads as two short decisions instead of one long list, and similarity across buttons and icons so a person only has to learn each pattern once. Continuity in the navigation bar and closure in the logo make the interface feel already familiar on first glance, while the dark figure-ground banner and single gold call-to-action button make sure the one action that matters — enrolling — is never in doubt. Together these choices reduce how much a first-time visitor has to think about the interface itself, leaving their attention for the actual decision: which course to take. Building it also showed how much of "obvious" design is really just consistent repetition of a small number of visual rules. The biggest lesson was that hierarchy only works if it's used sparingly — the moment a second element competes for the same gold-button attention, neither one wins.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Northfield Studio</span>
+    <span><a href="contact.html">Get in touch</a></span>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

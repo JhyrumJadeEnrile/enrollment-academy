@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll — BTVTE ENROLMENT PAGE</title>
+<meta name="description" content="Complete your enrollment for a BTVTE program.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">BTVTE <span>Enrolment</span>  </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="enroll.html">Enroll</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h1>BTVTE Program Enrollment Form</h1>
+        <p class="lede">Fields marked required must be filled in. You'll get a reference number as soon as you submit.</p>
+      </div>
+
+      <noscript>
+        <div class="form-status show error">
+          This form needs JavaScript enabled to validate and submit. Please enable JavaScript in your browser and reload the page.
+        </div>
+      </noscript>
+
+      <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
+      <form id="enroll-form" novalidate>
+
+        <!-- Proximity: personal-detail fields are grouped inside one bordered
+             block, set apart from the course/schedule block below, so the eye
+             reads them as one related unit rather than six loose fields. -->
+        <fieldset class="field-group">
+          <legend>Your details</legend>
+
+          <div class="field">
+            <label for="fullName">Full name <span aria-hidden="true">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+            <p class="error-text">This field is required.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <p class="error-text">This field is required.</p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <p class="error-text">This field is required.</p>
+          </div>
+
+          <div class="field">
+            <label for="dob">Date of birth <span aria-hidden="true">*</span></label>
+            <input type="date" id="dob" name="dob" autocomplete="bday" required>
+            <p class="error-text">This field is required.</p>
+          </div>
+        </fieldset>
+
+        <!-- A second, separate group for course + schedule choices — a
+             different kind of decision from "who is this", so it gets its
+             own visual boundary rather than blending into the group above. -->
+        <fieldset class="field-group">
+          <legend>Program</legend>
+
+          <div class="field">
+            <label for="course">Program <span aria-hidden="true">*</span></label>
+            <select id="course" name="course" required>
+              <option value="" selected disabled>Choose a program…</option>
+              <option>BTVTE-ICT Computer Programming</option>
+              <option>BTVTE-ICT Computer Hardware</option>
+              <option>BTVTE Electronics Technology</option>
+              <option>BTVTE Electrical Technology</option>
+            </select>
+            <p class="error-text">Please choose a program.</p>
+          </div>
+        </fieldset>
+
+        <!-- Final action group: kept visually apart from the input groups
+             above, so the last thing the eye lands on before submitting is
+             the agreement checkbox and the one call-to-action button. -->
+
+
+        <button type="submit" class="btn btn-cta">Complete Enrollment</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> BTVTE Enrolment</span>
+    <span><a href="contact.html">Get in touch</a></span>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/enroll.js"></script>
+</body>
+</html>
